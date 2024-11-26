@@ -8,7 +8,11 @@
     "start": "node app.js",
     "build": "npm install"
   },
-  "keywords": ["blog", "nodejs", "express"],
+  "keywords": [
+    "blog",
+    "nodejs",
+    "express"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -21,8 +25,5 @@
     "marked": "^4.3.0",
     "prismjs": "^1.29.0",
     "reading-time": "^1.5.0"
-  },
-  "engines": {
-    "node": "18.x"
   }
 }
