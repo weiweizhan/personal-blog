@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "node app.js",
     "start": "node app.js",
-    "build": "echo 'No build step needed'"
+    "build": "npm install"
   },
   "keywords": ["blog", "nodejs", "express"],
   "author": "",
@@ -23,6 +23,6 @@
     "reading-time": "^1.5.0"
   },
   "engines": {
-    "node": "18"
+    "node": "18.x"
   }
 }
