@@ -1,13 +1,15 @@
 {
   "name": "personal-blog",
   "version": "1.0.0",
-  "description": "",
+  "description": "Personal blog built with Node.js and Express",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
+    "build": "npm install",
+    "vercel-build": "echo 'Build step completed'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": ["blog", "nodejs", "express"],
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -22,6 +24,6 @@
     "reading-time": "^1.5.0"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": "18.x"
   }
 }
