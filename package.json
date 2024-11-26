@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "node app.js",
     "start": "node app.js",
-    "build": "echo 'Build completed'"
+    "build": "npm install"
   },
   "keywords": ["blog", "nodejs", "express"],
   "author": "",
