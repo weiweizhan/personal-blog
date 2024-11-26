@@ -4,24 +4,22 @@
   "description": "Personal blog built with Node.js and Express",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "build": "npm install",
-    "vercel-build": "echo 'Build step completed'",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "node app.js",
+    "start": "node app.js"
   },
   "keywords": ["blog", "nodejs", "express"],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.20.2",
-    "dotenv": "^16.3.1",
-    "ejs": "^3.1.9",
-    "express": "^4.18.2",
-    "express-session": "^1.17.3",
-    "gray-matter": "^4.0.3",
-    "marked": "^4.3.0",
-    "prismjs": "^1.29.0",
-    "reading-time": "^1.5.0"
+    "body-parser": "1.20.2",
+    "dotenv": "16.3.1",
+    "ejs": "3.1.9",
+    "express": "4.18.2",
+    "express-session": "1.17.3",
+    "gray-matter": "4.0.3",
+    "marked": "4.3.0",
+    "prismjs": "1.29.0",
+    "reading-time": "1.5.0"
   },
   "engines": {
     "node": "18.x"
