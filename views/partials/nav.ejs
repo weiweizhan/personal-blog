@@ -1,0 +1,11 @@
+<nav class="nav">
+    <div class="nav-container">
+        <a href="/" class="nav-logo">我的博客</a>
+        <div class="nav-links">
+            <a href="/?category=AI" class="nav-link <%= currentCategory === 'AI' ? 'active' : '' %>">AI</a>
+            <a href="/?category=架构" class="nav-link <%= currentCategory === '架构' ? 'active' : '' %>">架构</a>
+            <a href="/?category=人文" class="nav-link <%= currentCategory === '人文' ? 'active' : '' %>">人文</a>
+            <a href="/about" class="nav-link <%= currentCategory === 'about' ? 'active' : '' %>">关于我</a>
+        </div>
+    </div>
+</nav>

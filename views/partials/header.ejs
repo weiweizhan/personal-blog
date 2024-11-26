@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= typeof title !== 'undefined' ? title + ' - 我的博客' : '我的博客' %></title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap">
+    <%- include('styles') %>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="/">我的博客</a>
+            </div>
+            <div class="nav-links">
+                <a href="/" class="<%= currentCategory === 'all' ? 'active' : '' %>">全部</a>
+                <a href="/?category=AI" class="<%= currentCategory === 'AI' ? 'active' : '' %>">AI</a>
+                <a href="/?category=架构" class="<%= currentCategory === '架构' ? 'active' : '' %>">架构</a>
+                <a href="/?category=人文" class="<%= currentCategory === '人文' ? 'active' : '' %>">人文</a>
+                <a href="/about" class="<%= currentCategory === 'about' ? 'active' : '' %>">关于</a>
+            </div>
+            <div class="search-container">
+                <form action="/" method="GET" class="search-form">
+                    <input type="text" name="q" placeholder="搜索文章..." value="<%= typeof searchQuery !== 'undefined' ? searchQuery : '' %>">
+                    <button type="submit">搜索</button>
+                </form>
+            </div>
+        </nav>
+    </header>
+    <main class="main-container">

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的博客</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap">
+    <%- include('../partials/styles') %>
+</head>
+<body>
+    <%- include('../partials/header') %>
+
+    <div class="posts-container">
+        <% if (currentCategory !== 'all') { %>
+            <h1 class="category-title"><%= currentCategory %></h1>
+        <% } %>
+
+        <div class="posts-grid">
+            <% posts.forEach(function(post) { %>
+                <article class="post-card">
+                    <div class="post-meta">
+                        <span class="post-category"><%= post.category %></span>
+                        <time datetime="<%= post.date.toISOString() %>">
+                            <%= post.date.toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' }) %>
+                        </time>
+                    </div>
+                    <h2 class="post-title">
+                        <a href="/post/<%= post.id %>"><%= post.title %></a>
+                    </h2>
+                    <p class="post-excerpt"><%= post.excerpt %></p>
+                    <div class="post-footer">
+                        <div class="post-tags">
+                            <% post.tags.forEach(function(tag) { %>
+                                <a href="/?tag=<%= encodeURIComponent(tag) %>" class="tag"><%= tag %></a>
+                            <% }); %>
+                        </div>
+                        <span class="reading-time"><%= post.readingTime.text %></span>
+                    </div>
+                </article>
+            <% }); %>
+        </div>
+
+        <% if (posts.length === 0) { %>
+            <div class="no-posts">
+                <h2>暂无文章</h2>
+                <p>当前分类或搜索条件下没有找到任何文章。</p>
+            </div>
+        <% } %>
+
+        <% if (pagination.totalPages > 1) { %>
+            <div class="pagination">
+                <% if (pagination.hasPrevPage) { %>
+                    <a href="?page=<%= pagination.currentPage - 1 %><%= currentCategory !== 'all' ? '&category=' + currentCategory : '' %>" class="page-link">上一页</a>
+                <% } %>
+                
+                <span class="page-info">第 <%= pagination.currentPage %> 页，共 <%= pagination.totalPages %> 页</span>
+                
+                <% if (pagination.hasNextPage) { %>
+                    <a href="?page=<%= pagination.currentPage + 1 %><%= currentCategory !== 'all' ? '&category=' + currentCategory : '' %>" class="page-link">下一页</a>
+                <% } %>
+            </div>
+        <% } %>
+    </div>
+
+    <%- include('../partials/footer') %>
+</body>
+</html>
